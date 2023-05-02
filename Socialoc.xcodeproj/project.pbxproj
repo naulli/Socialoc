@@ -11,6 +11,10 @@
 		5849188929F8731700291E23 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5849188829F8731700291E23 /* ContentView.swift */; };
 		5849188B29F8731900291E23 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5849188A29F8731900291E23 /* Assets.xcassets */; };
 		5849188E29F8731900291E23 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5849188D29F8731900291E23 /* Preview Assets.xcassets */; };
+		5849189E2A01523800291E23 /* MKCoordinateRegion+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5849189D2A01523800291E23 /* MKCoordinateRegion+Extensions.swift */; };
+		584918A12A0153AC00291E23 /* LandmarkListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584918A02A0153AB00291E23 /* LandmarkListView.swift */; };
+		584918A32A0153DF00291E23 /* LandmarkCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584918A22A0153DF00291E23 /* LandmarkCategoryView.swift */; };
+		584918A52A0153F200291E23 /* Recenter Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584918A42A0153F200291E23 /* Recenter Button.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +23,11 @@
 		5849188829F8731700291E23 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		5849188A29F8731900291E23 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5849188D29F8731900291E23 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		5849189B2A01515700291E23 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5849189D2A01523800291E23 /* MKCoordinateRegion+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MKCoordinateRegion+Extensions.swift"; sourceTree = "<group>"; };
+		584918A02A0153AB00291E23 /* LandmarkListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandmarkListView.swift; sourceTree = "<group>"; };
+		584918A22A0153DF00291E23 /* LandmarkCategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandmarkCategoryView.swift; sourceTree = "<group>"; };
+		584918A42A0153F200291E23 /* Recenter Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Recenter Button.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +60,9 @@
 		5849188529F8731700291E23 /* Socialoc */ = {
 			isa = PBXGroup;
 			children = (
+				5849189F2A01539900291E23 /* Views */,
+				5849189C2A0151ED00291E23 /* Extensions */,
+				5849189B2A01515700291E23 /* Info.plist */,
 				5849188629F8731700291E23 /* SocialocApp.swift */,
 				5849188829F8731700291E23 /* ContentView.swift */,
 				5849188A29F8731900291E23 /* Assets.xcassets */,
@@ -65,6 +77,24 @@
 				5849188D29F8731900291E23 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		5849189C2A0151ED00291E23 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				5849189D2A01523800291E23 /* MKCoordinateRegion+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		5849189F2A01539900291E23 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				584918A02A0153AB00291E23 /* LandmarkListView.swift */,
+				584918A22A0153DF00291E23 /* LandmarkCategoryView.swift */,
+				584918A42A0153F200291E23 /* Recenter Button.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,7 +167,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				584918A52A0153F200291E23 /* Recenter Button.swift in Sources */,
 				5849188929F8731700291E23 /* ContentView.swift in Sources */,
+				584918A32A0153DF00291E23 /* LandmarkCategoryView.swift in Sources */,
+				5849189E2A01523800291E23 /* MKCoordinateRegion+Extensions.swift in Sources */,
+				584918A12A0153AC00291E23 /* LandmarkListView.swift in Sources */,
 				5849188729F8731700291E23 /* SocialocApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
