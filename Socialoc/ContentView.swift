@@ -32,51 +32,58 @@ struct ContentView: View {
     }
     
     var body: some View {
-        VStack {
-            
-            TextField("Search", text: $searchTerm, onEditingChanged: { _ in
+        NavigationStack {
+            VStack {
                 
-            }, onCommit: {
+                TextField("Search", text: $searchTerm, onEditingChanged: { _ in
+                    
+                }, onCommit: {
                     // get all landmarks
-                placeListVM.searchLandmarks(searchTerm: searchTerm)
+                    placeListVM.searchLandmarks(searchTerm: searchTerm)
+                    
+                }).textFieldStyle(RoundedBorderTextFieldStyle())
                 
-            }).textFieldStyle(RoundedBorderTextFieldStyle())
-            
-            LandmarkCategoryView { (category) in
-                placeListVM.searchLandmarks(searchTerm: category)
-            }
-            
-            Picker("Select", selection: $displayType) {
-                Text("Map").tag(DisplayType.map)
-                Text("List").tag(DisplayType.list)
-            }.pickerStyle(SegmentedPickerStyle())
-            
-            if displayType == .map {
-                
-                Map(coordinateRegion: getRegion(), interactionModes: .all, showsUserLocation: true, userTrackingMode: $userTrackingMode, annotationItems: placeListVM.landmarks) { landmark in
-                    MapMarker(coordinate: landmark.coordinate)
+                LandmarkCategoryView { (category) in
+                    placeListVM.searchLandmarks(searchTerm: category)
                 }
-                .gesture(DragGesture()
-                            .onChanged({ (value) in
-                                isDragged = true
-                            })
-                ).overlay(isDragged ? AnyView(RecenterButton {
-                    placeListVM.startUpdatingLocation()
-                    isDragged = false
-                }.padding()): AnyView(EmptyView()), alignment: .bottom)
                 
-                
-            } else if displayType == .list {
-                LandmarkListView(landmarks: placeListVM.landmarks)
-            }
-            
-        }.padding()
-    }
-}
+                Picker("Select", selection: $displayType) {
+                    Text("Map").tag(DisplayType.map)
+                    Text("List").tag(DisplayType.list)
+                }.pickerStyle(SegmentedPickerStyle())
+                           
+                if displayType == .map {
+                    
+                    Map(coordinateRegion: getRegion(), interactionModes: .all, showsUserLocation: true, userTrackingMode: $userTrackingMode, annotationItems: placeListVM.landmarks) { landmark in
+                        MapMarker(coordinate: landmark.coordinate)
+                    }
+                    .gesture(DragGesture()
+                        .onChanged({ (value) in
+                            isDragged = true
+                        })
+                    ).overlay(isDragged ? AnyView(RecenterButton {
+                        placeListVM.startUpdatingLocation()
+                        isDragged = false
+                    }.padding()): AnyView(EmptyView()), alignment: .bottom)
+                    
+                    
+                } else if displayType == .list {
+                    LandmarkListView(landmarks: placeListVM.landmarks)
+                }
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
+                Button {
+                    print("Image tapped!")
+                } label: {
+                    Image("sunset")
+                }
+            }.padding()
+        }
     }
+    
+    struct ContentView_Previews: PreviewProvider {
+        static var previews: some View {
+            ContentView()
+        }
+    }
+    
 }
-
