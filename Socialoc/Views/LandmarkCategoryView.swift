@@ -9,7 +9,7 @@ import SwiftUI
 
 struct LandmarkCategoryView: View {
     
-    let categories = ["Hotels", "Bar", "Coffee", "Vegan", "Salon", "Drugstore 💊", "Groceries 🛒"]
+    let categories = ["Hotels 🏨", "Bar 🥂", "Coffee ☕️", "Vegan 🌱", "Salon 💄", "Drugstore 💊", "Groceries 🛒"]
     let onSelectedCategory: (String) -> ()
     @State private var selectedCategory: String = ""
     
